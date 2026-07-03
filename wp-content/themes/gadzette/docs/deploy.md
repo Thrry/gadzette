@@ -9,6 +9,31 @@ qui a d'abord été faite dans l'éditeur WordPress.
 2. Dans WordPress, activer le thème **La GaDzette**.
 3. Aller dans l'éditeur de site et vérifier le modèle `Accueil GaDzette`.
 
+## Déploiement continu GitHub Actions
+
+Le repo contient `.github/workflows/deploy-theme.yml`. Cette action déploie le
+thème via SSH/rsync quand `master` change le dossier du thème.
+
+Secrets à configurer dans GitHub, environnement `production` :
+
+```text
+DEPLOY_HOST
+DEPLOY_PORT
+DEPLOY_USER
+DEPLOY_PATH
+DEPLOY_SSH_KEY
+DEPLOY_KNOWN_HOSTS
+```
+
+`DEPLOY_PATH` doit pointer vers le dossier final du thème, par exemple :
+
+```text
+/home/USER/public_html/wp-content/themes/gadzette
+```
+
+`DEPLOY_KNOWN_HOSTS` est recommandé. Si absent, l'action utilise `ssh-keyscan`
+au moment du déploiement.
+
 ## Point important
 
 WordPress peut stocker les modèles modifiés dans la base. Si le modèle `home`
