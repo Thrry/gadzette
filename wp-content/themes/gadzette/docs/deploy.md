@@ -15,6 +15,37 @@ o2switch bloque SSH/SFTP entrant par IP. Les runners GitHub Actions standard
 n'ont pas une IP fixe simple à autoriser. Le bon modèle est donc : le serveur
 o2switch tire depuis GitHub.
 
+## Déploiement SSH depuis le Mac
+
+Si l'IP du Mac est autorisée dans cPanel > Autorisation SSH, le plus simple est :
+
+```bash
+git push
+bin/deploy-ssh.sh
+```
+
+Le script vérifie que `master` local correspond à `origin/master`, sauvegarde
+le thème distant dans `/home/joth9587/theme-backups`, puis synchronise :
+
+```text
+wp-content/themes/gadzette/
+```
+
+vers :
+
+```text
+/home/joth9587/public_html/wp-content/themes/gadzette
+```
+
+Variables possibles :
+
+```bash
+REMOTE_HOST=hevea.o2switch.net
+REMOTE_USER=joth9587
+REMOTE_PORT=22
+REMOTE_THEME_PATH=/home/joth9587/public_html/wp-content/themes/gadzette
+```
+
 ### Mise en place avec cPanel Git Version Control
 
 Dans cPanel > **Git™ Version Control** :

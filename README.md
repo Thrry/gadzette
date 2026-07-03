@@ -36,6 +36,25 @@ il faut ensuite la reporter ici, sinon Git et WordPress divergent.
 
 Voir aussi `wp-content/themes/gadzette/docs/deploy.md`.
 
+## Déploiement SSH simple
+
+Le chemin le plus simple est de déployer depuis ce Mac, après avoir autorisé
+l'IP du Mac dans cPanel > Autorisation SSH.
+
+```bash
+git push
+bin/deploy-ssh.sh
+```
+
+Par défaut, le script déploie vers :
+
+```text
+joth9587@hevea.o2switch.net:/home/joth9587/public_html/wp-content/themes/gadzette
+```
+
+Il refuse de déployer si `master` local n'est pas identique à `origin/master`,
+sauvegarde le thème distant, puis synchronise le thème avec `rsync --delete`.
+
 ## Déploiement côté o2switch
 
 o2switch bloque SSH/SFTP entrant par IP. Les runners GitHub Actions n'ont pas
