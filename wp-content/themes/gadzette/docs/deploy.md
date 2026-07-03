@@ -9,30 +9,49 @@ qui a d'abord été faite dans l'éditeur WordPress.
 2. Dans WordPress, activer le thème **La GaDzette**.
 3. Aller dans l'éditeur de site et vérifier le modèle `Accueil GaDzette`.
 
-## Déploiement continu GitHub Actions
+## Déploiement côté o2switch
 
-Le repo contient `.github/workflows/deploy-theme.yml`. Cette action déploie le
-thème via SSH/rsync quand `master` change le dossier du thème.
+o2switch bloque SSH/SFTP entrant par IP. Les runners GitHub Actions standard
+n'ont pas une IP fixe simple à autoriser. Le bon modèle est donc : le serveur
+o2switch tire depuis GitHub.
 
-Secrets à configurer dans GitHub, environnement `production` :
+### Mise en place initiale
 
-```text
-DEPLOY_HOST
-DEPLOY_PORT
-DEPLOY_USER
-DEPLOY_PATH
-DEPLOY_SSH_KEY
-DEPLOY_KNOWN_HOSTS
+Dans le terminal cPanel :
+
+```bash
+mkdir -p ~/repos
+cd ~/repos
+git clone https://github.com/Thrry/gadzette.git
+bash ~/repos/gadzette/bin/deploy-theme.sh
 ```
 
-`DEPLOY_PATH` doit pointer vers le dossier final du thème, par exemple :
+Le script utilise ces chemins par défaut :
 
 ```text
-/home/USER/public_html/wp-content/themes/gadzette
+REPO_DIR      = ~/repos/gadzette
+THEME_SOURCE = ~/repos/gadzette/wp-content/themes/gadzette
+THEME_TARGET = ~/public_html/wp-content/themes/gadzette
+BACKUP_DIR   = ~/theme-backups
 ```
 
-`DEPLOY_KNOWN_HOSTS` est recommandé. Si absent, l'action utilise `ssh-keyscan`
-au moment du déploiement.
+Si WordPress n'est pas dans `~/public_html`, lancer le script avec un chemin
+explicite :
+
+```bash
+THEME_TARGET=/home/joth9587/CHEMIN/wp-content/themes/gadzette \
+  bash ~/repos/gadzette/bin/deploy-theme.sh
+```
+
+### Cron optionnel
+
+Pour un pull automatique régulier depuis cPanel Cron :
+
+```bash
+*/5 * * * * /usr/bin/bash /home/joth9587/repos/gadzette/bin/deploy-theme.sh >/home/joth9587/deploy-gadzette.log 2>&1
+```
+
+Le cron peut aussi être remplacé par un lancement manuel après chaque push.
 
 ## Point important
 

@@ -36,23 +36,19 @@ il faut ensuite la reporter ici, sinon Git et WordPress divergent.
 
 Voir aussi `wp-content/themes/gadzette/docs/deploy.md`.
 
-## Déploiement continu
+## Déploiement côté o2switch
 
-La GitHub Action `.github/workflows/deploy-theme.yml` déploie le thème vers le
-site WordPress de production à chaque push sur `master` qui touche
-`wp-content/themes/gadzette/`.
+o2switch bloque SSH/SFTP entrant par IP. Les runners GitHub Actions n'ont pas
+une IP fixe simple à autoriser, donc le déploiement doit se faire en **pull**
+depuis o2switch.
 
-Secrets GitHub requis :
+Le script à lancer côté serveur est :
 
-```text
-DEPLOY_HOST        hôte SSH du serveur
-DEPLOY_PORT        port SSH, optionnel, 22 par défaut
-DEPLOY_USER        utilisateur SSH
-DEPLOY_PATH        chemin absolu du thème sur le serveur
-                   exemple: /home/USER/public_html/wp-content/themes/gadzette
-DEPLOY_SSH_KEY     clé privée SSH autorisée sur le serveur
-DEPLOY_KNOWN_HOSTS optionnel, ligne known_hosts du serveur
+```bash
+bash /home/joth9587/repos/gadzette/bin/deploy-theme.sh
 ```
 
-Avant chaque synchronisation, l'action crée une archive de sauvegarde du thème
-existant à côté du dossier déployé, puis synchronise avec `rsync --delete`.
+Il met à jour le repo depuis GitHub, sauvegarde le thème existant, puis copie
+`wp-content/themes/gadzette/` vers le WordPress de production avec `rsync`.
+
+Voir `wp-content/themes/gadzette/docs/deploy.md`.
