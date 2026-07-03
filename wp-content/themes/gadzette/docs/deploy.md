@@ -34,7 +34,7 @@ wp-content/themes/gadzette/
 vers :
 
 ```text
-/home/joth9587/public_html/wp-content/themes/gadzette
+/home/joth9587/gadzette.fr/wp-content/themes/gadzette
 ```
 
 Variables possibles :
@@ -43,7 +43,7 @@ Variables possibles :
 REMOTE_HOST=hevea.o2switch.net
 REMOTE_USER=joth9587
 REMOTE_PORT=22
-REMOTE_THEME_PATH=/home/joth9587/public_html/wp-content/themes/gadzette
+REMOTE_THEME_PATH=/home/joth9587/gadzette.fr/wp-content/themes/gadzette
 ```
 
 ### Mise en place avec cPanel Git Version Control
@@ -70,7 +70,7 @@ cPanel exécutera `.cpanel.yml`, qui copie :
 vers :
 
 ```text
-/home/joth9587/public_html/wp-content/themes/gadzette
+/home/joth9587/gadzette.fr/wp-content/themes/gadzette
 ```
 
 ### Fallback terminal
@@ -89,11 +89,11 @@ Le script utilise ces chemins par défaut :
 ```text
 REPO_DIR      = ~/repos/gadzette
 THEME_SOURCE = ~/repos/gadzette/wp-content/themes/gadzette
-THEME_TARGET = ~/public_html/wp-content/themes/gadzette
+THEME_TARGET = ~/gadzette.fr/wp-content/themes/gadzette
 BACKUP_DIR   = ~/theme-backups
 ```
 
-Si WordPress n'est pas dans `~/public_html`, lancer le script avec un chemin
+Si WordPress n'est pas dans `~/gadzette.fr`, lancer le script avec un chemin
 explicite :
 
 ```bash

@@ -49,7 +49,7 @@ bin/deploy-ssh.sh
 Par défaut, le script déploie vers :
 
 ```text
-joth9587@hevea.o2switch.net:/home/joth9587/public_html/wp-content/themes/gadzette
+joth9587@hevea.o2switch.net:/home/joth9587/gadzette.fr/wp-content/themes/gadzette
 ```
 
 Il refuse de déployer si `master` local n'est pas identique à `origin/master`,
@@ -77,7 +77,7 @@ Ensuite, dans la fiche du repo cPanel :
 cPanel utilise `.cpanel.yml` pour copier le thème vers :
 
 ```text
-/home/joth9587/public_html/wp-content/themes/gadzette
+/home/joth9587/gadzette.fr/wp-content/themes/gadzette
 ```
 
 En fallback terminal, le script à lancer côté serveur est :

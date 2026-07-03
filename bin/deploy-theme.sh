@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_DIR="${REPO_DIR:-$HOME/repos/gadzette}"
 THEME_SOURCE="${THEME_SOURCE:-$REPO_DIR/wp-content/themes/gadzette}"
-THEME_TARGET="${THEME_TARGET:-$HOME/public_html/wp-content/themes/gadzette}"
+THEME_TARGET="${THEME_TARGET:-$HOME/gadzette.fr/wp-content/themes/gadzette}"
 BACKUP_DIR="${BACKUP_DIR:-$HOME/theme-backups}"
 
 if [ ! -d "$REPO_DIR/.git" ]; then
