@@ -42,7 +42,26 @@ o2switch bloque SSH/SFTP entrant par IP. Les runners GitHub Actions n'ont pas
 une IP fixe simple à autoriser, donc le déploiement doit se faire en **pull**
 depuis o2switch.
 
-Le script à lancer côté serveur est :
+Dans cPanel, utiliser **Git™ Version Control** :
+
+```text
+Clone URL: https://github.com/Thrry/gadzette.git
+Repository Path: repos/gadzette
+Repository Name: gadzette
+```
+
+Ensuite, dans la fiche du repo cPanel :
+
+1. **Update from Remote**
+2. **Deploy HEAD Commit**
+
+cPanel utilise `.cpanel.yml` pour copier le thème vers :
+
+```text
+/home/joth9587/public_html/wp-content/themes/gadzette
+```
+
+En fallback terminal, le script à lancer côté serveur est :
 
 ```bash
 bash /home/joth9587/repos/gadzette/bin/deploy-theme.sh

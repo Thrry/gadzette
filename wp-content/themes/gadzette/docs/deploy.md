@@ -15,7 +15,34 @@ o2switch bloque SSH/SFTP entrant par IP. Les runners GitHub Actions standard
 n'ont pas une IP fixe simple à autoriser. Le bon modèle est donc : le serveur
 o2switch tire depuis GitHub.
 
-### Mise en place initiale
+### Mise en place avec cPanel Git Version Control
+
+Dans cPanel > **Git™ Version Control** :
+
+```text
+Clone URL: https://github.com/Thrry/gadzette.git
+Repository Path: repos/gadzette
+Repository Name: gadzette
+```
+
+Après création du repo cPanel :
+
+1. Cliquer **Update from Remote** pour récupérer `master`.
+2. Cliquer **Deploy HEAD Commit**.
+
+cPanel exécutera `.cpanel.yml`, qui copie :
+
+```text
+/home/joth9587/repos/gadzette/wp-content/themes/gadzette
+```
+
+vers :
+
+```text
+/home/joth9587/public_html/wp-content/themes/gadzette
+```
+
+### Fallback terminal
 
 Dans le terminal cPanel :
 
