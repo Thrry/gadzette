@@ -1,0 +1,400 @@
+/*
+Theme Name: La GaDzette
+Theme URI: https://gadzette.fr/
+Author: La GaDzette
+Description: Block theme for the La GaDzette local editorial site.
+Version: 0.1.0
+Requires at least: 6.5
+Tested up to: 6.8
+Requires PHP: 8.1
+Text Domain: gadzette
+*/
+
+/*
+ * Hallmark · genre: editorial · tone: gazette locale
+ * Palette: campaign red + pale blue + soft green
+ * Macrostructure: newspaper front page
+ */
+
+:root {
+  --gadzette-paper: #e8f0f1;
+  --gadzette-paper-2: #f8fbfa;
+  --gadzette-band: #cad99a;
+  --gadzette-ink: #111417;
+  --gadzette-muted: #51656a;
+  --gadzette-rule: #9bb8be;
+  --gadzette-accent: #cf3128;
+  --gadzette-accent-soft: #e36a58;
+  --gadzette-radius: 7px;
+  --gadzette-max: 1180px;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body,
+.wp-site-blocks {
+  background: var(--gadzette-paper);
+  color: var(--gadzette-ink);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.gadzette-header {
+  background: var(--gadzette-paper);
+  border-bottom: 4px solid var(--gadzette-ink);
+  padding: 1.25rem 0 0.65rem;
+}
+
+.gadzette-header__inner {
+  align-items: flex-end;
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  justify-content: space-between;
+  width: min(100% - 2rem, var(--gadzette-max));
+}
+
+.gadzette-header .wp-block-site-title {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.gadzette-header .wp-block-navigation {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.gadzette-home-v2 {
+  background: var(--gadzette-paper);
+  color: var(--gadzette-ink);
+  padding-top: 1rem;
+}
+
+.gadzette-home-v2,
+.gadzette-home-v2 * {
+  box-sizing: border-box;
+}
+
+.gadzette-home-v2 .gadzette-masthead,
+.gadzette-home-v2 .gadzette-edito-cover,
+.gadzette-home-v2 .gadzette-articles-shell {
+  width: min(100%, var(--gadzette-max));
+}
+
+.gadzette-home-v2 .gadzette-masthead {
+  border-bottom: 4px solid var(--gadzette-ink);
+  margin-bottom: 2rem;
+  padding-bottom: 1.15rem;
+}
+
+.gadzette-home-v2 .gadzette-masthead figure {
+  margin: 0 auto 0.3rem;
+  max-width: 560px;
+}
+
+.gadzette-home-v2 .gadzette-masthead img {
+  display: block;
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.gadzette-home-v2 .gadzette-kicker {
+  color: var(--gadzette-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.gadzette-home-v2 .gadzette-edito-cover {
+  border-bottom: 2px solid var(--gadzette-ink);
+  border-top: 2px solid var(--gadzette-ink);
+  margin-bottom: 3rem;
+  padding: 1.4rem 0 2.25rem;
+}
+
+.gadzette-home-v2 .gadzette-section-label {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0 0 1.15rem;
+}
+
+.gadzette-home-v2 .gadzette-section-label::after {
+  background: var(--gadzette-accent);
+  content: "";
+  display: block;
+  height: 2px;
+  min-width: 3.5rem;
+  width: 14rem;
+}
+
+.gadzette-home-v2 .gadzette-section-label strong {
+  background: var(--gadzette-ink);
+  color: var(--gadzette-paper-2);
+  display: inline-block;
+  font-size: 0.78rem;
+  line-height: 1;
+  padding: 0.28rem 0.36rem;
+}
+
+.gadzette-home-v2 .gadzette-cover-grid {
+  align-items: start;
+  gap: 2rem;
+}
+
+.gadzette-home-v2 .gadzette-edito-text .wp-block-post-title {
+  font-size: 2.45rem;
+  line-height: 0.98;
+  margin: 0 0 1rem;
+  max-width: 24ch;
+}
+
+.gadzette-home-v2 .gadzette-edito-text .wp-block-post-content {
+  color: var(--gadzette-ink);
+  font-size: 0.96rem;
+  line-height: 1.52;
+  max-width: 66ch;
+}
+
+.gadzette-home-v2 .gadzette-edito-text .wp-block-post-content p {
+  margin-bottom: 0.82rem;
+}
+
+.gadzette-home-v2 .gadzette-edito-visual {
+  background: var(--gadzette-paper-2);
+  border: 2px solid var(--gadzette-ink);
+  margin: 0;
+  padding: 0.75rem;
+}
+
+.gadzette-home-v2 .gadzette-edito-visual img {
+  display: block;
+  height: auto;
+  max-height: 660px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.gadzette-home-v2 .gadzette-articles-band {
+  background: linear-gradient(180deg, transparent 0, transparent 1.5rem, rgba(202, 217, 154, 0.62) 1.5rem, rgba(202, 217, 154, 0.62) calc(100% - 2rem), transparent calc(100% - 2rem));
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0 1.25rem 1rem;
+}
+
+.gadzette-home-v2 .gadzette-articles-shell {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gadzette-home-v2 .gadzette-articles-title {
+  align-items: end;
+  border-top: 4px solid var(--gadzette-accent);
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding-top: 0.9rem;
+}
+
+.gadzette-home-v2 .gadzette-articles-title h2 {
+  font-size: 1.5rem;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.gadzette-home-v2 .gadzette-articles-title p {
+  color: var(--gadzette-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: right;
+}
+
+.gadzette-home-v2 .gadzette-article-grid {
+  display: grid !important;
+  gap: 2.25rem 2rem !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  padding-left: 0;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post {
+  background: rgba(248, 251, 250, 0.54);
+  border-top: 2px solid var(--gadzette-rule);
+  min-width: 0;
+  padding-top: 1rem;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(3n+2) {
+  border-top-color: var(--gadzette-accent);
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child {
+  background: var(--gadzette-paper-2);
+  border: 2px solid var(--gadzette-ink);
+  display: grid;
+  gap: 1.2rem;
+  grid-column: span 2;
+  grid-template-columns: 1fr;
+  padding: 1.1rem;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child::before {
+  align-self: start;
+  background: var(--gadzette-accent);
+  color: white;
+  content: "À la une";
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  justify-self: start;
+  line-height: 1;
+  padding: 0.38rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.gadzette-home-v2 .gadzette-article-grid .wp-block-post-featured-image {
+  margin: 0 0 0.8rem;
+}
+
+.gadzette-home-v2 .gadzette-article-grid .wp-block-post-featured-image img {
+  background: var(--gadzette-paper-2);
+  border: 1px solid var(--gadzette-ink);
+  display: block;
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child .wp-block-post-featured-image {
+  margin: 0 0 0.8rem;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child .wp-block-post-featured-image img {
+  max-height: 520px;
+}
+
+.gadzette-home-v2 .gadzette-article-grid .wp-block-post-title {
+  font-size: 1.55rem;
+  line-height: 1.02;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child .wp-block-post-title {
+  font-size: 2.05rem;
+  max-width: 24ch;
+}
+
+.gadzette-home-v2 .gadzette-article-grid .wp-block-post-excerpt {
+  color: var(--gadzette-ink);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.gadzette-home-v2 .gadzette-article-grid .wp-block-post-excerpt__excerpt {
+  margin-bottom: 0;
+}
+
+.gadzette-home-v2 .wp-block-query-pagination {
+  border-top: 2px solid var(--gadzette-ink);
+  padding-top: 1rem;
+}
+
+.gadzette-home-v2 .wp-block-query-pagination a {
+  background: var(--gadzette-accent);
+  border-radius: 2px;
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.55rem 0.7rem;
+  text-decoration: none;
+}
+
+.gadzette-footer {
+  background: #b7d1d6;
+  border-top: 4px solid var(--gadzette-ink);
+  padding: 5rem 0;
+}
+
+.gadzette-footer__inner {
+  align-items: start;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(12rem, 1fr) minmax(18rem, 1.35fr);
+  width: min(100% - 2rem, var(--gadzette-max));
+}
+
+.gadzette-footer h2,
+.gadzette-footer h3,
+.gadzette-footer p {
+  margin-top: 0;
+}
+
+.gadzette-footer h2,
+.gadzette-footer h3 {
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.gadzette-footer a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .gadzette-home-v2 .gadzette-cover-grid,
+  .gadzette-home-v2 .gadzette-articles-title,
+  .gadzette-home-v2 .gadzette-article-grid,
+  .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child {
+    grid-template-columns: 1fr;
+  }
+
+  .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child {
+    grid-column: span 1;
+  }
+
+  .gadzette-home-v2 .gadzette-articles-title p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 781px) {
+  .gadzette-header__inner,
+  .gadzette-footer__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .gadzette-header__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .gadzette-home-v2 {
+    padding-top: 0.5rem;
+  }
+
+  .gadzette-home-v2 .gadzette-edito-text .wp-block-post-title {
+    font-size: 2rem;
+  }
+
+  .gadzette-home-v2 .gadzette-article-grid .wp-block-post-title,
+  .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child .wp-block-post-title {
+    font-size: 1.45rem;
+    max-width: none;
+  }
+}

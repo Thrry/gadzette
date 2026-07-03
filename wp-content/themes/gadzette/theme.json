@@ -1,0 +1,152 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "palette": [
+        {
+          "color": "#e8f0f1",
+          "name": "Fond GaDzette",
+          "slug": "gadzette-paper"
+        },
+        {
+          "color": "#f8fbfa",
+          "name": "Papier",
+          "slug": "gadzette-paper-2"
+        },
+        {
+          "color": "#111417",
+          "name": "Encre",
+          "slug": "gadzette-ink"
+        },
+        {
+          "color": "#51656a",
+          "name": "Secondaire",
+          "slug": "gadzette-muted"
+        },
+        {
+          "color": "#cf3128",
+          "name": "Rouge campagne",
+          "slug": "gadzette-accent"
+        },
+        {
+          "color": "#cad99a",
+          "name": "Vert campagne",
+          "slug": "gadzette-band"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "720px",
+      "wideSize": "1180px"
+    },
+    "spacing": {
+      "spacingScale": {
+        "operator": "*",
+        "increment": 1.5,
+        "steps": 7,
+        "mediumStep": 1.5,
+        "unit": "rem"
+      },
+      "units": [
+        "px",
+        "rem",
+        "vw",
+        "%"
+      ]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "fontFamilies": [
+        {
+          "fontFamily": "Inter, Arial, sans-serif",
+          "name": "Sans",
+          "slug": "sans"
+        }
+      ],
+      "fontSizes": [
+        {
+          "fluid": false,
+          "name": "Petit",
+          "size": "0.875rem",
+          "slug": "small"
+        },
+        {
+          "fluid": false,
+          "name": "Normal",
+          "size": "1rem",
+          "slug": "medium"
+        },
+        {
+          "fluid": false,
+          "name": "Grand",
+          "size": "1.5rem",
+          "slug": "large"
+        },
+        {
+          "fluid": {
+            "min": "2rem",
+            "max": "3.5rem"
+          },
+          "name": "Titre",
+          "size": "3rem",
+          "slug": "x-large"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#e8f0f1",
+      "text": "#111417"
+    },
+    "elements": {
+      "button": {
+        "border": {
+          "radius": "2px"
+        },
+        "color": {
+          "background": "#cf3128",
+          "text": "#ffffff"
+        },
+        "typography": {
+          "fontWeight": "800"
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontStyle": "normal",
+          "fontWeight": "900",
+          "letterSpacing": "0",
+          "lineHeight": "1.04"
+        }
+      }
+    },
+    "spacing": {
+      "blockGap": "1.5rem"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|sans",
+      "fontSize": "1rem",
+      "fontStyle": "normal",
+      "fontWeight": "500",
+      "lineHeight": "1.5"
+    }
+  },
+  "templateParts": [
+    {
+      "area": "header",
+      "name": "header",
+      "title": "Header"
+    },
+    {
+      "area": "footer",
+      "name": "footer",
+      "title": "Footer"
+    }
+  ]
+}

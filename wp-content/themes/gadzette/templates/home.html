@@ -1,0 +1,83 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"gadzette-home-v2","style":{"spacing":{"blockGap":"0","margin":{"top":"0"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group gadzette-home-v2" style="margin-top:0"><!-- wp:group {"align":"wide","className":"gadzette-masthead","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide gadzette-masthead"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="file:./assets/images/gadzette-logo.png" alt="la GaDzette"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"gadzette-kicker"} -->
+<p class="gadzette-kicker">une feuille de chou à mettre entre toutes les mains</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"wide","className":"gadzette-edito-cover","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide gadzette-edito-cover"><!-- wp:html -->
+<div class="gadzette-section-label"><strong>Édito</strong></div>
+<!-- /wp:html -->
+
+<!-- wp:columns {"align":"wide","className":"gadzette-cover-grid"} -->
+<div class="wp-block-columns alignwide gadzette-cover-grid"><!-- wp:column {"width":"66.66%","className":"gadzette-edito-text"} -->
+<div class="wp-block-column gadzette-edito-text" style="flex-basis:66.66%"><!-- wp:query {"queryId":13,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":false,"taxQuery":{"include":{"category":[13]}},"parents":[],"format":[]},"layout":{"type":"default"}} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"default"}} -->
+<!-- wp:post-title {"isLink":false} /-->
+
+<!-- wp:post-content {"layout":{"type":"default"}} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Aucun édito publié pour le moment.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"33.33%"} -->
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"gadzette-edito-visual"} -->
+<figure class="wp-block-image size-large gadzette-edito-visual"><img src="file:./assets/images/jocelyne-etiquette-homepage-1000-q65.webp" alt="« Sans Étiquette »"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"gadzette-articles-band","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull gadzette-articles-band"><!-- wp:group {"align":"wide","className":"gadzette-articles-shell","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide gadzette-articles-shell"><!-- wp:html -->
+<div class="gadzette-articles-title"><h2>Derniers articles</h2><p>Conseil municipal · démocratie locale · associations</p></div>
+<!-- /wp:html -->
+
+<!-- wp:query {"queryId":8,"align":"wide","query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"exclude":{"category":[13]}},"parents":[],"format":[]},"layout":{"type":"default"}} -->
+<div class="wp-block-query alignwide"><!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Aucune publication n’a été trouvée.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+
+<!-- wp:post-template {"align":"wide","className":"gadzette-article-grid","layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:post-featured-image {"isLink":true,"scale":"contain"} /-->
+
+<!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","orientation":"vertical","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:post-title {"isLink":true} /-->
+
+<!-- wp:template-part {"slug":"post-meta"} /-->
+
+<!-- wp:post-excerpt /--></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
+<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between"}} -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","area":"footer"} /-->
