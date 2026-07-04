@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.23
+Version: 0.2.24
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -69,7 +69,6 @@ button:focus-visible {
   align-items: baseline;
   display: inline-flex;
   gap: 0.015em;
-  transform: rotate(-2deg);
   transform-origin: center;
 }
 
@@ -77,26 +76,26 @@ button:focus-visible {
   display: inline-block;
   paint-order: stroke fill;
   text-shadow: 0.025em 0.035em 0 rgba(26, 42, 45, 0.28);
-  -webkit-text-stroke: 0.018em var(--color-logo-stroke);
+  -webkit-text-stroke: 0.01em var(--color-logo-stroke);
 }
 
 .gadzette-logo__chunk--la {
-  transform: translateY(0.04em) rotate(-1deg);
+  transform: translateY(0.04em);
 }
 
 .gadzette-logo__chunk--ga {
   margin-left: 0.06em;
-  transform: translateY(-0.01em) rotate(1deg);
+  transform: translateY(-0.01em);
 }
 
 .gadzette-logo__chunk--dz {
   color: var(--color-accent);
   font-size: 1.08em;
-  transform: translateY(-0.03em) rotate(-1deg);
+  transform: translateY(-0.03em);
 }
 
 .gadzette-logo__chunk--ette {
-  transform: translateY(0.01em) rotate(1deg);
+  transform: translateY(0.01em);
 }
 
 .gadzette-logo--header {
