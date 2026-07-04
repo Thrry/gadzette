@@ -21,6 +21,12 @@ add_action('wp_enqueue_scripts', function () {
 (() => {
   if (document.body.classList.contains("gadzette-article-continuation")) {
     document.querySelector(".gadzette-articles-head h2")?.replaceChildren("Articles");
+    [
+      ".gadzette-masthead",
+      ".gadzette-edito-cover",
+      ".gadzette-rubriques",
+      ".gadzette-articles-more"
+    ].forEach((selector) => document.querySelector(selector)?.remove());
   }
 
   const rubriquePaths = {
