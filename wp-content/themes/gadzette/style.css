@@ -830,15 +830,22 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
 }
 
 .gadzette-archive-grid {
+  align-items: stretch;
   display: grid !important;
   gap: var(--space-lg) !important;
+  grid-auto-rows: 1fr;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.gadzette-archive-grid.wp-block-post-template-is-layout-flow > * {
+  margin-block: 0 !important;
+}
+
 .gadzette-archive-grid > .wp-block-post {
+  align-self: stretch;
   display: flex;
   margin-block-start: 0 !important;
   min-width: 0;
@@ -851,6 +858,7 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   box-shadow: 0 10px 26px -20px rgba(20, 39, 45, 0.24);
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin: 0;
   min-height: 18rem;
   padding: var(--space-lg);
