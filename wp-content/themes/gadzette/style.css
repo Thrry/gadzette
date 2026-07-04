@@ -831,6 +831,12 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   padding: 0;
 }
 
+.gadzette-archive-grid > .wp-block-post {
+  display: flex;
+  margin-block-start: 0 !important;
+  min-width: 0;
+}
+
 .gadzette-archive-card {
   background: var(--color-paper-card);
   border: 1px solid var(--color-rule-soft);
@@ -838,8 +844,10 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   box-shadow: 0 10px 26px -20px rgba(20, 39, 45, 0.24);
   display: flex;
   flex-direction: column;
+  margin: 0;
   min-height: 18rem;
   padding: var(--space-lg);
+  width: 100%;
 }
 
 .gadzette-archive-card .wp-block-post-title {
@@ -859,6 +867,10 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   font-size: var(--text-sm);
   line-height: 1.5;
   margin: 0;
+}
+
+.gadzette-archive-card .gadzette-card-read-more {
+  margin-top: auto;
 }
 
 @media (max-width: 980px) {
