@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.16
+Version: 0.2.17
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -523,6 +523,53 @@ button:focus-visible {
 
 .gadzette-home-v2 .wp-block-query-pagination {
   display: none;
+}
+
+body.gadzette-article-continuation .gadzette-home-v2 {
+  padding-top: 0;
+}
+
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-masthead,
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-edito-cover,
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-rubriques,
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-article-grid::after,
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-card-image-static,
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-articles-more {
+  display: none;
+}
+
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-articles-band {
+  padding-top: var(--space-3xl);
+}
+
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-article-grid {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-article-grid > .wp-block-post,
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child,
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2),
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(3) {
+  grid-column: auto;
+  grid-row: auto;
+  min-height: 18rem;
+  padding: var(--space-lg);
+}
+
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child .gadzette-card-body {
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+body.gadzette-article-continuation .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:not(:first-child) .wp-block-post-excerpt {
+  display: block;
+}
+
+body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination {
+  display: flex;
+  margin-top: var(--space-xl);
 }
 
 .gadzette-home-v2 .gadzette-rubriques {

@@ -19,6 +19,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('gadzette-nav-active');
     wp_add_inline_script('gadzette-nav-active', <<<'JS'
 (() => {
+  if (document.body.classList.contains("gadzette-article-continuation")) {
+    document.querySelector(".gadzette-articles-head h2")?.replaceChildren("Articles");
+  }
+
   const rubriquePaths = {
     "democratie-locale": "/category/democratie-locale/",
     "conseil-municipal": "/category/conseil-municipal/",
@@ -51,6 +55,11 @@ JS);
 });
 
 add_filter('body_class', function (array $classes): array {
+    $article_page = isset($_GET['query-8-page']) ? absint(wp_unslash($_GET['query-8-page'])) : 0;
+    if ($article_page > 1) {
+        $classes[] = 'gadzette-article-continuation';
+    }
+
     if (is_single()) {
         foreach (get_the_category() as $category) {
             $classes[] = 'category-' . sanitize_html_class($category->slug);
