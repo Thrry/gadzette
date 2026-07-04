@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.27
+Version: 0.2.28
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -777,17 +777,23 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
 }
 
 .gadzette-single,
+.gadzette-page,
 .gadzette-archive {
   background: var(--color-paper);
   padding: var(--space-3xl) 0;
 }
 
 .gadzette-single__inner,
+.gadzette-page__inner,
 .gadzette-archive__inner {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--layout-max) !important;
   width: min(100% - 2rem, var(--layout-max));
+}
+
+.gadzette-page__inner {
+  max-width: 860px !important;
 }
 
 .gadzette-single__inner {
@@ -804,7 +810,8 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   grid-column: 1;
 }
 
-.gadzette-single__title {
+.gadzette-single__title,
+.gadzette-page__title {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(2rem, 3.7vw, 3.15rem);
@@ -812,6 +819,13 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   margin: 0;
   max-width: 23ch;
   overflow-wrap: anywhere;
+}
+
+.gadzette-page__title {
+  border-bottom: 3px solid var(--color-accent);
+  margin-bottom: var(--space-xl);
+  max-width: none;
+  padding-bottom: var(--space-md);
 }
 
 .gadzette-single__image {
@@ -834,14 +848,16 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   width: 100%;
 }
 
-.gadzette-single__content {
+.gadzette-single__content,
+.gadzette-page__content {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.72;
   max-width: 70ch;
 }
 
-.gadzette-single__content p {
+.gadzette-single__content p,
+.gadzette-page__content p {
   margin-bottom: var(--space-lg);
 }
 
