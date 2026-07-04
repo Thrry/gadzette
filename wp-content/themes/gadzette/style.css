@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.6
+Version: 0.2.7
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -189,16 +189,29 @@ button:focus-visible {
   margin-bottom: var(--space-3xl);
 }
 
+.gadzette-home-v2 .gadzette-edito-query,
+.gadzette-home-v2 .gadzette-edito-post {
+  width: 100%;
+}
+
 .gadzette-home-v2 .gadzette-edito-query .wp-block-post-template,
 .gadzette-home-v2 .gadzette-edito-query .wp-block-post {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .gadzette-home-v2 .gadzette-cover-grid {
   align-items: start;
+  display: grid !important;
   gap: clamp(var(--space-2xl), 6vw, 4.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.34fr);
+  width: 100%;
+}
+
+.gadzette-home-v2 .gadzette-cover-grid > .wp-block-column {
+  width: auto;
 }
 
 .gadzette-home-v2 .gadzette-section-label {
@@ -232,7 +245,7 @@ button:focus-visible {
   letter-spacing: 0;
   line-height: 1.12;
   margin: 0 0 var(--space-lg);
-  max-width: 24ch;
+  max-width: 30ch;
   overflow-wrap: anywhere;
 }
 
@@ -241,7 +254,7 @@ button:focus-visible {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
-  max-width: 68ch;
+  max-width: none;
 }
 
 .gadzette-home-v2 .gadzette-edito-text .wp-block-post-content p {
@@ -368,8 +381,7 @@ button:focus-visible {
   grid-column: span 2;
 }
 
-.gadzette-home-v2 .gadzette-card-image-static,
-.gadzette-home-v2 .gadzette-card-image-portrait {
+.gadzette-home-v2 .gadzette-card-image-static {
   display: none;
   margin: 0;
 }
@@ -378,31 +390,23 @@ button:focus-visible {
   display: block;
 }
 
-.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) {
-  display: grid;
-  grid-template-columns: minmax(9rem, 0.46fr) minmax(0, 0.54fr);
-  min-height: 22rem;
-  padding: 0;
-}
-
-.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) .gadzette-card-image-portrait {
+.gadzette-home-v2 .gadzette-article-grid::after {
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(16, 18, 20, 0.5)),
+    url("/wp-content/themes/gadzette/assets/images/jocelyne-etiquette-homepage-1000-q65.webp") center 18% / cover;
+  border: 1px solid var(--color-rule-soft);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 26px -20px rgba(20, 39, 45, 0.24);
+  content: "";
   display: block;
-  min-height: 100%;
+  min-height: 19rem;
+  overflow: hidden;
 }
 
 .gadzette-home-v2 .gadzette-card-image-static img {
   display: block;
   height: 16rem;
   object-fit: cover;
-  width: 100%;
-}
-
-.gadzette-home-v2 .gadzette-card-image-portrait img {
-  display: block;
-  height: 100%;
-  min-height: 22rem;
-  object-fit: cover;
-  object-position: center 18%;
   width: 100%;
 }
 
@@ -426,10 +430,6 @@ button:focus-visible {
   margin: -2.2rem var(--space-lg) var(--space-lg);
   padding: var(--space-lg);
   position: relative;
-}
-
-.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) .gadzette-card-body {
-  padding: var(--space-lg);
 }
 
 .gadzette-home-v2 .gadzette-card-category {
@@ -805,7 +805,7 @@ button:focus-visible {
 
   .gadzette-home-v2 .gadzette-cover-grid {
     align-items: start;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .gadzette-home-v2 .gadzette-article-grid {
@@ -815,10 +815,6 @@ button:focus-visible {
   .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2),
   .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(3) {
     grid-column: span 1;
-  }
-
-  .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) {
-    display: flex;
   }
 
   .gadzette-rubriques-grid,
@@ -921,9 +917,8 @@ button:focus-visible {
     height: 11rem;
   }
 
-  .gadzette-home-v2 .gadzette-card-image-portrait img {
-    height: 13rem;
-    min-height: 13rem;
+  .gadzette-home-v2 .gadzette-article-grid::after {
+    min-height: 16rem;
   }
 
   .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child .gadzette-card-body {
