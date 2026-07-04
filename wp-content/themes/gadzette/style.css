@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.4
+Version: 0.2.5
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -130,8 +130,8 @@ button:focus-visible {
 .gadzette-home-v2 .gadzette-rubriques__inner {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1440px !important;
-  width: min(100% - 2rem, 1440px);
+  max-width: var(--layout-max) !important;
+  width: min(100% - 2rem, var(--layout-max));
 }
 
 .gadzette-home-v2 .gadzette-masthead {
