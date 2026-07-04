@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.22
+Version: 0.2.23
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -54,21 +54,54 @@ button:focus-visible {
 }
 
 .gadzette-logo {
-  display: inline-block;
-  line-height: 0;
+  color: var(--color-logo);
+  display: inline-flex;
+  font-family: var(--font-logo);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.85;
   max-width: 100%;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-.gadzette-logo img {
-  display: block;
-  height: auto;
-  max-width: 100%;
+.gadzette-logo__word {
+  align-items: baseline;
+  display: inline-flex;
+  gap: 0.015em;
+  transform: rotate(-2deg);
+  transform-origin: center;
+}
+
+.gadzette-logo__chunk {
+  display: inline-block;
+  paint-order: stroke fill;
+  text-shadow: 0.025em 0.035em 0 rgba(26, 42, 45, 0.28);
+  -webkit-text-stroke: 0.018em var(--color-logo-stroke);
+}
+
+.gadzette-logo__chunk--la {
+  transform: translateY(0.04em) rotate(-1deg);
+}
+
+.gadzette-logo__chunk--ga {
+  margin-left: 0.06em;
+  transform: translateY(-0.01em) rotate(1deg);
+}
+
+.gadzette-logo__chunk--dz {
+  color: var(--color-accent);
+  font-size: 1.08em;
+  transform: translateY(-0.03em) rotate(-1deg);
+}
+
+.gadzette-logo__chunk--ette {
+  transform: translateY(0.01em) rotate(1deg);
 }
 
 .gadzette-logo--header {
   flex: 0 0 auto;
-  width: 13rem;
+  font-size: 2.15rem;
 }
 
 .gadzette-header .wp-block-site-title {
@@ -143,9 +176,11 @@ button:focus-visible {
 }
 
 .gadzette-logo--masthead {
+  display: flex;
+  font-size: 6.45rem;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: min(100%, 42rem);
 }
 
 .gadzette-home-v2 .gadzette-kicker {
@@ -670,8 +705,8 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
 }
 
 .gadzette-logo--footer {
+  font-size: 2.35rem;
   margin-bottom: var(--space-md);
-  width: 15rem;
 }
 
 .gadzette-footer h3 {
@@ -1004,15 +1039,15 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   }
 
   .gadzette-logo--header {
-    width: 10.5rem;
+    font-size: 1.72rem;
   }
 
   .gadzette-logo--masthead {
-    width: min(100%, 22rem);
+    font-size: 3.65rem;
   }
 
   .gadzette-logo--footer {
-    width: 12.5rem;
+    font-size: 2rem;
   }
 
   .gadzette-home-v2 .gadzette-issue-line {
