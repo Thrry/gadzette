@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.5
+Version: 0.2.6
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -368,7 +368,8 @@ button:focus-visible {
   grid-column: span 2;
 }
 
-.gadzette-home-v2 .gadzette-card-image-static {
+.gadzette-home-v2 .gadzette-card-image-static,
+.gadzette-home-v2 .gadzette-card-image-portrait {
   display: none;
   margin: 0;
 }
@@ -377,10 +378,31 @@ button:focus-visible {
   display: block;
 }
 
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.46fr) minmax(0, 0.54fr);
+  min-height: 22rem;
+  padding: 0;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) .gadzette-card-image-portrait {
+  display: block;
+  min-height: 100%;
+}
+
 .gadzette-home-v2 .gadzette-card-image-static img {
   display: block;
   height: 16rem;
   object-fit: cover;
+  width: 100%;
+}
+
+.gadzette-home-v2 .gadzette-card-image-portrait img {
+  display: block;
+  height: 100%;
+  min-height: 22rem;
+  object-fit: cover;
+  object-position: center 18%;
   width: 100%;
 }
 
@@ -404,6 +426,10 @@ button:focus-visible {
   margin: -2.2rem var(--space-lg) var(--space-lg);
   padding: var(--space-lg);
   position: relative;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) .gadzette-card-body {
+  padding: var(--space-lg);
 }
 
 .gadzette-home-v2 .gadzette-card-category {
@@ -791,6 +817,10 @@ button:focus-visible {
     grid-column: span 1;
   }
 
+  .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) {
+    display: flex;
+  }
+
   .gadzette-rubriques-grid,
   .gadzette-footer__inner,
   .gadzette-archive-grid {
@@ -889,6 +919,11 @@ button:focus-visible {
 
   .gadzette-home-v2 .gadzette-card-image-static img {
     height: 11rem;
+  }
+
+  .gadzette-home-v2 .gadzette-card-image-portrait img {
+    height: 13rem;
+    min-height: 13rem;
   }
 
   .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child .gadzette-card-body {
