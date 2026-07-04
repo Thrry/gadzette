@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.13
+Version: 0.2.14
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -377,15 +377,23 @@ button:focus-visible {
 }
 
 .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:first-child {
-  grid-column: span 2;
-  grid-row: span 2;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
   min-height: 36rem;
   padding: 0;
 }
 
 .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2),
 .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(3) {
-  grid-column: span 2;
+  grid-column: 3;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2) {
+  grid-row: 1;
+}
+
+.gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(3) {
+  grid-row: 2;
 }
 
 .gadzette-home-v2 .gadzette-card-image-static {
@@ -406,7 +414,8 @@ button:focus-visible {
   box-shadow: 0 10px 26px -20px rgba(20, 39, 45, 0.24);
   content: "";
   display: block;
-  grid-row: span 2;
+  grid-column: 4;
+  grid-row: 1 / span 2;
   min-height: 36rem;
   overflow: hidden;
 }
@@ -830,6 +839,12 @@ button:focus-visible {
   .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(2),
   .gadzette-home-v2 .gadzette-article-grid > .wp-block-post:nth-child(3) {
     grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .gadzette-home-v2 .gadzette-article-grid::after {
+    grid-column: auto;
+    grid-row: span 2;
   }
 
   .gadzette-rubriques-grid,
@@ -936,6 +951,7 @@ button:focus-visible {
   }
 
   .gadzette-home-v2 .gadzette-article-grid::after {
+    grid-column: auto;
     grid-row: span 1;
     min-height: 28rem;
   }
