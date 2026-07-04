@@ -1,12 +1,18 @@
 <!-- wp:template-part {"slug":"header","tagName":"header","area":"header"} /-->
 
 <!-- wp:group {"tagName":"main","align":"full","className":"gadzette-single","style":{"spacing":{"margin":{"top":"0"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group alignfull gadzette-single" style="margin-top:0"><!-- wp:group {"align":"wide","className":"gadzette-single__inner","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull gadzette-single" style="margin-top:0"><!-- wp:group {"align":"wide","className":"gadzette-single__inner","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide gadzette-single__inner"><!-- wp:post-terms {"term":"category","className":"gadzette-card-category"} /-->
 
 <!-- wp:post-title {"level":1,"className":"gadzette-single__title"} /-->
 
-<!-- wp:template-part {"slug":"post-meta"} /-->
+<!-- wp:group {"className":"gadzette-post-meta gadzette-single-meta","style":{"spacing":{"blockGap":"0.35rem"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group gadzette-post-meta gadzette-single-meta"><!-- wp:post-date {"format":"M j, Y","isLink":false,"fontSize":"small"} /-->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">— par rédaction la GaDZette</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
 <!-- wp:post-featured-image {"isLink":false,"sizeSlug":"large","className":"gadzette-single__image"} /-->
 
