@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.21
+Version: 0.2.22
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -53,6 +53,24 @@ button:focus-visible {
   width: min(100% - 2rem, var(--layout-max));
 }
 
+.gadzette-logo {
+  display: inline-block;
+  line-height: 0;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.gadzette-logo img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.gadzette-logo--header {
+  flex: 0 0 auto;
+  width: 13rem;
+}
+
 .gadzette-header .wp-block-site-title {
   flex: 0 0 auto;
   font-family: var(--font-display);
@@ -73,7 +91,7 @@ button:focus-visible {
   font-weight: 600;
   line-height: 1;
   margin-left: auto;
-  max-width: calc(100% - 14rem);
+  max-width: calc(100% - 15rem);
 }
 
 .gadzette-header .wp-block-navigation__container {
@@ -124,16 +142,10 @@ button:focus-visible {
   text-align: center;
 }
 
-.gadzette-home-v2 .gadzette-wordmark {
-  color: oklch(58% 0.02 240);
-  font-family: var(--font-display);
-  font-size: 6.6rem;
-  font-weight: 700;
-  line-height: 0.95;
-}
-
-.gadzette-home-v2 .gadzette-wordmark span {
-  color: var(--color-accent);
+.gadzette-logo--masthead {
+  margin-left: auto;
+  margin-right: auto;
+  width: min(100%, 42rem);
 }
 
 .gadzette-home-v2 .gadzette-kicker {
@@ -652,19 +664,14 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
   grid-template-columns: 1.3fr 1fr 1fr;
 }
 
-.gadzette-footer h2,
 .gadzette-footer h3,
 .gadzette-footer p {
   margin-top: 0;
 }
 
-.gadzette-footer h2 {
-  color: var(--color-accent);
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+.gadzette-logo--footer {
+  margin-bottom: var(--space-md);
+  width: 15rem;
 }
 
 .gadzette-footer h3 {
@@ -988,8 +995,16 @@ body.gadzette-article-continuation .gadzette-home-v2 .wp-block-query-pagination 
     padding-bottom: var(--space-lg);
   }
 
-  .gadzette-home-v2 .gadzette-wordmark {
-    font-size: 3.7rem;
+  .gadzette-logo--header {
+    width: 10.5rem;
+  }
+
+  .gadzette-logo--masthead {
+    width: min(100%, 22rem);
+  }
+
+  .gadzette-logo--footer {
+    width: 12.5rem;
   }
 
   .gadzette-home-v2 .gadzette-issue-line {
