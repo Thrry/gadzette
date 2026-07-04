@@ -3,7 +3,7 @@ Theme Name: La GaDzette
 Theme URI: https://gadzette.fr/
 Author: La GaDzette
 Description: Block theme for the La GaDzette local editorial site.
-Version: 0.2.15
+Version: 0.2.16
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.1
@@ -406,9 +406,7 @@ button:focus-visible {
 }
 
 .gadzette-home-v2 .gadzette-article-grid::after {
-  background:
-    linear-gradient(180deg, transparent 55%, rgba(16, 18, 20, 0.5)),
-    url("/wp-content/themes/gadzette/assets/images/jocelyne-etiquette-homepage-1000-q65.webp") center 18% / cover;
+  background: var(--color-paper-card) url("/wp-content/themes/gadzette/assets/images/jocelyne-etiquette-homepage-1000-q65.webp") center / contain no-repeat;
   border: 1px solid var(--color-rule-soft);
   border-radius: var(--radius-sm);
   box-shadow: 0 10px 26px -20px rgba(20, 39, 45, 0.24);
